@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Облік оренди — Lab 8</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <h1 class="app-title">Облік оренди</h1>
+            <nav class="tabs" aria-label="Розділи">
+                <button type="button" class="tab-btn active" data-tab="clients">Клієнти</button>
+                <button type="button" class="tab-btn" data-tab="products">Продукти</button>
+                <button type="button" class="tab-btn" data-tab="rentals">Оренда</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="toolbar">
+            <h2 id="section-title" class="section-title">Клієнти</h2>
+            <button type="button" id="add-btn" class="btn btn-primary">+ Додати клієнта</button>
+        </div>
+
+        <div id="items-list" class="cards-list"></div>
+    </main>
+
+    <div id="toast-container" class="toast-container"></div>
+
+    <div id="modal-overlay" class="modal-overlay hidden">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 id="modal-title" class="modal-title">Редагування</h3>
+                <button type="button" id="modal-close-btn" class="icon-btn" aria-label="Закрити">&times;</button>
+            </div>
+            <form id="modal-form" class="modal-form" novalidate>
+                <div id="modal-fields" class="form-fields"></div>
+                <div id="modal-error" class="form-error hidden"></div>
+                <div class="modal-actions">
+                    <button type="submit" id="modal-save-btn" class="btn btn-success">Зберегти</button>
+                    <button type="button" id="modal-cancel-btn" class="btn btn-secondary">Скасувати</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="confirm-overlay" class="modal-overlay hidden">
+        <div class="modal-card modal-card-sm">
+            <div class="modal-header">
+                <h3 class="modal-title">Підтвердження</h3>
+            </div>
+            <div class="confirm-body">
+                <p id="confirm-message" class="confirm-message"></p>
+                <div class="modal-actions">
+                    <button type="button" id="confirm-yes-btn" class="btn btn-danger-solid">Видалити</button>
+                    <button type="button" id="confirm-no-btn" class="btn btn-secondary">Скасувати</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
